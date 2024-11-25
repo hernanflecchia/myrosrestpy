@@ -1,5 +1,5 @@
 from ros import Ros, PPPModule
-from ros.ppp import PPPAAA, PPPProfile, PPPSecret
+from ros.ppp import PPPAAA, PPPProfile, PPPSecret, PPPActive
 
 
 class TestPPP:
@@ -16,3 +16,7 @@ class TestPPP:
     def test_secret(self, ros: Ros):
         for i in ros.ppp.secret():
             assert isinstance(i, PPPSecret)
+
+    def test_active(self, ros: Ros):
+        for i in ros.ppp.active():
+            assert isinstance(i, PPPActive)

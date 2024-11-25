@@ -191,7 +191,9 @@ class BaseRos:
         return _converter.structure(data, cl)
 
     def delete_as(self, filename: str):
-        res = self.session.delete(filename)
+        full_url = self.url + filename
+        #res = self.session.delete(filename)
+        res = self.session.delete(full_url)
         return res.ok
 
 
